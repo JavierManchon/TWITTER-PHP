@@ -9,13 +9,22 @@
         public function __construct(string $autor, string $username, string $texto) {
             $this->autor = $autor;
             $this->username = $username;
-
             $this->texto = $texto;
         }
 
-        //el & modifica el array orginal, n trabaja con una copia del mismo
+        //el & modifica el array orginal, no trabaja con una copia del mismo
         function ponerTweet(&$tweetsArray, $tweetObject) {
             array_unshift($tweetsArray, $tweetObject);
+        }
+
+        function convertArray() {
+            $array = [
+                "texto" => $this-> texto,
+                "autor" => $this-> autor,
+                "username" => $this-> username
+            ];
+
+            return $array;
         }
 
 
