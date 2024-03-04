@@ -6,7 +6,7 @@ $tweetsJSON = file_get_contents("files.json");
 $tweets= json_decode($tweetsJSON, true);
 
 if (isset($_POST["texto"])) {
-    //Esto geenra un objeto no un array, por eso lo pasamos con el metodo
+    //Esto genera un objeto no un array, por eso lo pasamos con el metodo
     $tweet = new Tweet("Javier", "MadVocado", $_POST["texto"]);
 
     $tweet->ponerTweet($tweets["tweets"], $tweet-> convertArray());
